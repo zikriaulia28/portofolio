@@ -78,7 +78,7 @@
     }
 
     .portofolio {
-        height: 1350px;
+        height: 100vh;
     }
 
     .box .content h3 {
@@ -160,7 +160,7 @@
     }
 
     .portofolio {
-        height: 2480px;
+        height: 1024px;
     }
 
     .portofolio-wrapper h1 {
@@ -221,7 +221,7 @@
     }
 
     .portofolio {
-        height: 156.25rem;
+        height: 70rem;
     }
 
     .about-wrapper .content p {
