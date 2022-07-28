@@ -81,11 +81,6 @@
         height: 1350px;
     }
 
-    .portofolio-wrapper .portofolio-sub {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .box .content h3 {
         font-size: 14px;
     }
