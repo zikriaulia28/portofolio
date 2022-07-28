@@ -209,7 +209,7 @@ section {
 
 .portofolio {
     background-color: var(--second-bd-color);
-    height: 584px;
+    height: 750px;
 }
 
 .portofolio .portofolio-wrapper {
@@ -234,9 +234,10 @@ section {
 
 .portofolio-wrapper .portofolio-sub {
     margin-top: 66px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
     gap: 20px;
+    justify-content: center;
 }
 
 .portofolio-sub .portof {
@@ -247,8 +248,9 @@ section {
     position: absolute;
     width: 256px;
     height: 256px;
-    top: 0;
-    bottom: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 10px;
     color: #ffffff;
 }
