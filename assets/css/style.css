@@ -342,7 +342,6 @@ nav .nav-items {
 
 .contact-wrapper .content {
     margin-top: 2.5rem;
-    color: var(--second-font-color);
 }
 
 .content .contact-main {
@@ -352,10 +351,8 @@ nav .nav-items {
 
 .contact-main .contact-logo {
     margin-right: 1.5rem;
-}
-
-.contact-main .contact-logo img {
-    background-color: var(--second-font-color);
+    font-size: 25px;
+    color: var(--second-font-color);
 }
 
 .contact-main .title {
