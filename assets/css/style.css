@@ -2,8 +2,11 @@
 
 :root {
     --main-color: #069A8E;
-    --main-bd-color: #222831;
+    --main-dark-color: #222831;
+    --main-bd-color: #f9f9f9;
     --second-bd-color: #3E3D3D;
+    --main-font-color: #ffffff;
+    --second-font-color: #000000;
     --font: 'Ubuntu', sans-serif;
 }
 
@@ -20,6 +23,19 @@ body {
     font-family: var(--font);
     background-color: var(--main-bd-color);
 }
+
+/* darkMode */
+.dark-body {
+    background-color: var(--main-dark-color);
+    color: var(--main-font-color) !important;
+}
+
+.btn-dark {
+    position: absolute;
+    right: 0;
+}
+
+/* darkMode */
 
 section {
     margin-top: 100px;
@@ -48,10 +64,11 @@ nav .nav-items {
     width: 30rem;
     display: flex;
     justify-content: space-between;
+    margin-right: 40px;
 }
 
 .nav-items li a {
-    color: #ffffff;
+    color: var(--second-font-color);
     font-size: 16px;
     font-weight: 500;
 }
@@ -81,7 +98,7 @@ nav .nav-items {
     display: block;
     width: 28px;
     height: 3px;
-    background-color: white;
+    background-color: var(--second-font-color);
     border-radius: 3px;
 }
 
@@ -97,14 +114,14 @@ nav .nav-items {
 .home-wrapper .heading {
     font-size: 60px;
     font-weight: 400;
-    color: #ffffff;
+    color: var(--second-font-color);
 }
 
 .home-wrapper .sub-heading {
     font-size: 75px;
     font-weight: 700;
     line-height: 86px;
-    color: #ffffff;
+    color: var(--second-font-color);
 }
 
 .home-wrapper span {
@@ -115,7 +132,7 @@ nav .nav-items {
     font-size: 24px;
     font-weight: 500;
     line-height: 28px;
-    color: #ffffff;
+    color: var(--second-font-color);
 }
 
 .home-wrapper .btn {
@@ -137,7 +154,7 @@ nav .nav-items {
 }
 
 .home-wrapper a {
-    color: #ffffff;
+    color: var(--second-font-color);
 }
 
 /* home end */
@@ -198,7 +215,7 @@ nav .nav-items {
     padding-top: 20px;
     font-size: 65px;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--second-font-color);
 }
 
 .skills-wrapper .line {
@@ -307,7 +324,7 @@ nav .nav-items {
     padding-top: 1.25rem;
     font-size: 65px;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--second-font-color);
 }
 
 .contact-wrapper .line {
@@ -325,7 +342,7 @@ nav .nav-items {
 
 .contact-wrapper .content {
     margin-top: 2.5rem;
-    color: #ffffff;
+    color: var(--second-font-color);
 }
 
 .content .contact-main {
@@ -335,6 +352,10 @@ nav .nav-items {
 
 .contact-main .contact-logo {
     margin-right: 1.5rem;
+}
+
+.contact-main .contact-logo img {
+    background-color: var(--second-font-color);
 }
 
 .contact-main .title {
