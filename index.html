@@ -179,22 +179,26 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="">
+                    <form name="contact" id="contact-form">
                         <h3>Send Message</h3>
                         <div class="inputBox">
-                            <input type="text" required="required">
+                            <input type="text" name="nama">
+                            <div class="error-hint hidden">Your name is required</div>
                             <span>Full Name</span>
+
                         </div>
                         <div class="inputBox">
-                            <input type="email" required="required">
+                            <input type="text" name="email">
+                            <div class="error-hint hidden">Your email is invalid</div>
                             <span>Email</span>
                         </div>
                         <div class="inputBox">
-                            <textarea required="required" id="" cols="30" rows="10"></textarea>
+                            <textarea id="" cols="30" rows="10" name="message"></textarea>
+                            <div class="error-hint hidden">Your message is required</div>
                             <span>Type your message...</span>
                         </div>
                         <div class="inputBox">
-                            <input type="submit" value="Send">
+                            <input type="submit" onclick="submitForm()">
                         </div>
                     </form>
                 </div>

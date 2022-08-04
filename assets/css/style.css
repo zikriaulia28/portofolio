@@ -433,6 +433,19 @@ nav .nav-items {
     left: 2px;
 }
 
+.hidden {
+    display: none;
+}
+
+.error-hint {
+    position: absolute;
+    font-size: 12px;
+    right: 10px;
+    top: 10px;
+    font-weight: 400;
+    color: #FF1E00;
+}
+
 /* contact end */
 
 /* footer */

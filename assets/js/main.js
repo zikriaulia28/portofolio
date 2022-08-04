@@ -1,5 +1,10 @@
 const menuToggle = document.querySelector(".menu-toogle input");
 const nav = document.querySelector(".nav-items");
+const form = document.querySelector("form");
+const nameInput = document.querySelector("input[name='nama']");
+const emailInput = document.querySelector("input[name='email']");
+const messageInput = document.querySelector("textarea[name='message']");
+const inputs = [nameInput, emailInput, messageInput];
 let icon = document.querySelector(".fa-moon");
 let btn = document.querySelector(".btn-dark");
 let h1 = document.querySelector(".heading");
@@ -38,4 +43,52 @@ for (let i = 0; i < anchor.length; i++) {
       nav.classList.remove("active");
     }
   });
+}
+
+// form contact
+const isValidEmail = (email) => {
+  const re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+};
+
+const resetElm = (elm) => {
+  elm.nextElementSibling.classList.add("hidden");
+};
+
+const invalidateElm = (elm) => {
+  elm.nextElementSibling.classList.remove("hidden");
+};
+
+const validateInputs = () => {
+  resetElm(nameInput);
+  resetElm(emailInput);
+  resetElm(messageInput);
+  if (!nameInput.value) {
+    invalidateElm(nameInput);
+  }
+
+  if (!isValidEmail(emailInput.value)) {
+    invalidateElm(emailInput);
+  }
+
+  if (!messageInput.value) {
+    invalidateElm(messageInput);
+  }
+};
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  validateInputs();
+});
+
+inputs.forEach((input) => {
+  input.addEventListener("input", () => {
+    validateInputs();
+  });
+});
+
+function submitForm() {
+  document.contact.submit();
+  document.contact.reset();
 }
