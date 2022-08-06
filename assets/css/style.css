@@ -25,6 +25,20 @@ body {
     overflow-x: hidden;
 }
 
+.tampil-atas {
+    position: relative !important;
+    transform: translateY(0px) !important;
+    opacity: 1 !important;
+    transition: all ease-in-out 1s;
+}
+
+.tampil-samping {
+    position: relative !important;
+    transform: translateX(0px) !important;
+    opacity: 1 !important;
+    transition: all ease-in-out 1s;
+}
+
 /* darkMode */
 .dark-body {
     background-color: var(--main-dark-color);
@@ -36,6 +50,7 @@ body {
     right: 0;
     cursor: pointer;
 }
+
 
 /* darkMode */
 
@@ -87,20 +102,11 @@ nav .nav-items {
     justify-content: space-between;
 }
 
-.menu-toogle input {
-    position: absolute;
-    width: 40px;
-    height: 28px;
-    margin-top: -5px;
-    margin-left: -5px;
-    opacity: 0;
-}
-
 .menu-toogle span {
     display: block;
     width: 28px;
     height: 3px;
-    background-color: var(--second-font-color);
+    background-color: var(--main-color);
     border-radius: 3px;
 }
 
@@ -166,6 +172,7 @@ nav .nav-items {
     background-color: var(--second-bd-color);
     height: 584px;
     width: 100%;
+    opacity: 0;
 }
 
 .about .about-wrapper {
@@ -188,14 +195,18 @@ nav .nav-items {
     display: inline-block;
 }
 
-.content .text-caption {
+.about-wrapper .content-about {
+    opacity: 0;
+}
+
+.content-about .text-caption {
     padding-top: 42px;
     font-size: 26px;
     font-weight: 500;
     color: var(--main-color);
 }
 
-.content .text {
+.content-about .text {
     margin-top: 57px;
     font-size: 26px;
     font-weight: 400;
@@ -206,6 +217,9 @@ nav .nav-items {
 /* about end*/
 
 /* skills start */
+.skills {
+    opacity: 0;
+}
 
 .skills .skills-wrapper {
     margin: auto;
@@ -235,6 +249,38 @@ nav .nav-items {
     margin-top: 61px;
 }
 
+.skills-logo .logo1 {
+    opacity: 0;
+}
+
+.skills-logo .logo2 {
+    opacity: 0;
+}
+
+.skills-logo .logo3 {
+    opacity: 0;
+}
+
+.skills-logo .logo4 {
+    opacity: 0;
+}
+
+.skills-logo .logo5 {
+    opacity: 0;
+}
+
+.skills-logo .logo6 {
+    opacity: 0;
+}
+
+.skills-logo .logo7 {
+    opacity: 0;
+}
+
+.skills-logo .logo8 {
+    opacity: 0;
+}
+
 /* skills end */
 
 /* portofolio start */
@@ -242,6 +288,7 @@ nav .nav-items {
 .portofolio {
     background-color: var(--second-bd-color);
     height: 750px;
+    opacity: 0;
 }
 
 .portofolio .portofolio-wrapper {
@@ -312,6 +359,9 @@ nav .nav-items {
 /* portofolio end */
 
 /* contact start */
+.contact {
+    opacity: 0;
+}
 
 .contact .contact-wrapper {
     margin: auto;

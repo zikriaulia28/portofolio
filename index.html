@@ -31,10 +31,10 @@
                     <li class="menu-item"><a href="#contact" class="menu-link">CONTACT</a></li>
                 </ul>
                 <div class="menu-toogle">
-                    <input type="checkbox" name="">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <!-- <input type="checkbox"> -->
+                    <span class="span"></span>
+                    <span class="span"></span>
+                    <span class="span"></span>
                 </div>
                 <div class="btn-dark">
                     <i class="fa-solid fa-moon"></i>
@@ -64,7 +64,7 @@
         <div class="container about-wrapper">
             <h1>About Me</h1>
             <span class="line"></span>
-            <div class="content">
+            <div class="content-about">
                 <p class="text-caption">"Tak ada sesuatu yang abadi, kita bisa mengubah masa depan." - Alucard
                 </p>
                 <p class="text">Saya freshgraduate lulusan teknik informatika, mampu bekerja secara individu maupun
@@ -81,14 +81,14 @@
             <h1 class="heading-skills">Skills</h1>
             <span class="line"></span>
             <div class="skills-logo">
-                <div class="logo"><img src="assets/img/html 1.png" alt=""></div>
-                <div class="logo"><img src="assets/img/css 1.png" alt=""></div>
-                <div class="logo"><img src="assets/img/javascript 1.png" alt=""></div>
-                <div class="logo"><img src="assets/img/bootsrtap.png" alt=""></div>
-                <div class="logo"><img src="assets/img/tailwind.png" alt=""></div>
-                <div class="logo"><img src="assets/img/react 1.png" alt=""></div>
-                <div class="logo"><img src="assets/img/figma 1.png" alt=""></div>
-                <div class="logo"><img src="assets/img/git 1.png" alt=""></div>
+                <div class="logo1"><img src="assets/img/html 1.png" alt=""></div>
+                <div class="logo2"><img src="assets/img/css 1.png" alt=""></div>
+                <div class="logo3"><img src="assets/img/javascript 1.png" alt=""></div>
+                <div class="logo4"><img src="assets/img/bootsrtap.png" alt=""></div>
+                <div class="logo5"><img src="assets/img/tailwind.png" alt=""></div>
+                <div class="logo6"><img src="assets/img/react 1.png" alt=""></div>
+                <div class="logo7"><img src="assets/img/figma 1.png" alt=""></div>
+                <div class="logo8"><img src="assets/img/git 1.png" alt=""></div>
             </div>
 
         </div>
@@ -183,25 +183,22 @@
                         <h3>CONTACT FORM</h3>
                         <div class="input-group">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()">
+                            <input type="text" placeholder="Enter your name" id="contact-name">
                             <span id="name-error"></span>
                         </div>
                         <div class="input-group">
                             <label>Phone No.</label>
-                            <input type="text" placeholder="123 456 7890 12" id="contact-phone"
-                                onkeyup="validatePhone()">
+                            <input type="text" placeholder="Enter your number phone" id="contact-phone">
                             <span id="phone-error"></span>
                         </div>
                         <div class="input-group">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your email" id="contact-email"
-                                onkeyup="validateEmail()">
+                            <input type="text" placeholder="Enter your email" id="contact-email">
                             <span id="email-error"></span>
                         </div>
                         <div class="input-group">
                             <label>Your Message</label>
-                            <textarea rows="5" placeholder="Enter your message" id="contact-message"
-                                onkeyup="validateMessage()"></textarea>
+                            <textarea rows="5" placeholder="Enter your message" id="contact-message"></textarea>
                             <span id="message-error"></span>
                         </div>
                         <button onclick="return validateForm()">Send Message</button>
