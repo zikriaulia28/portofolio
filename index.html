@@ -100,7 +100,7 @@
             <h1>Galery Portofolio</h1>
             <span class="line"></span>
             <div class="portofolio-sub">
-                <div class="portof">
+                <div class="portof1">
                     <img src="assets/img/porto1.png" alt="">
                     <div class="content overlay">
                         <div class="content-link">
@@ -112,7 +112,7 @@
                     </div>
                 </div>
 
-                <div class="portof">
+                <div class="portof2">
                     <img src="assets/img/porto2.png" alt="">
                     <div class="content overlay">
                         <div class="content-link">
@@ -124,7 +124,7 @@
                     </div>
                 </div>
 
-                <div class="portof">
+                <div class="portof3">
                     <img src="assets/img/porto1.png" alt="">
                     <div class="content overlay">
                         <div class="content-link">
@@ -148,7 +148,7 @@
                 <span class="line"></span>
             </div>
             <div class="box">
-                <div class="content">
+                <div class="content-container">
                     <h3 class="text-contact">Beberapa cara menghubungi saya.</h3>
                     <div class="contact-main">
                         <div class="contact-logo">
@@ -183,22 +183,25 @@
                         <h3>CONTACT FORM</h3>
                         <div class="input-group">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" id="contact-name">
+                            <input type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()">
                             <span id="name-error"></span>
                         </div>
                         <div class="input-group">
                             <label>Phone No.</label>
-                            <input type="text" placeholder="Enter your number phone" id="contact-phone">
+                            <input type="text" placeholder="Enter your number phone" id="contact-phone"
+                                onkeyup="validatePhone()">
                             <span id="phone-error"></span>
                         </div>
                         <div class="input-group">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your email" id="contact-email">
+                            <input type="text" placeholder="Enter your email" id="contact-email"
+                                onkeyup="validateEmail()">
                             <span id="email-error"></span>
                         </div>
                         <div class="input-group">
                             <label>Your Message</label>
-                            <textarea rows="5" placeholder="Enter your message" id="contact-message"></textarea>
+                            <textarea rows="5" placeholder="Enter your message" id="contact-message"
+                                onkeyup="validateMessage()"></textarea>
                             <span id="message-error"></span>
                         </div>
                         <button onclick="return validateForm()">Send Message</button>

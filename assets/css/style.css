@@ -319,8 +319,19 @@ nav .nav-items {
     justify-content: center;
 }
 
-.portofolio-sub .portof {
+.portofolio-sub .portof1 {
     position: relative;
+    opacity: 0;
+}
+
+.portofolio-sub .portof2 {
+    position: relative;
+    opacity: 0;
+}
+
+.portofolio-sub .portof3 {
+    position: relative;
+    opacity: 0;
 }
 
 .portof .content {
@@ -394,11 +405,12 @@ nav .nav-items {
     gap: 3rem;
 }
 
-.box .content {
+.box .content-container {
     margin: 5px;
+    opacity: 0;
 }
 
-.content .contact-main {
+.content-container .contact-main {
     margin: 40px 0 0 0;
     display: flex;
 }
@@ -415,6 +427,7 @@ nav .nav-items {
 
 .box .contact-container {
     margin: 5px;
+    opacity: 0;
 }
 
 .contact-container form {
@@ -477,7 +490,7 @@ form button {
 
 .input-group span {
     position: absolute;
-    bottom: 12px;
+    bottom: 25px;
     right: 17px;
     color: #d82912;
     font-size: 14px;

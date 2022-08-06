@@ -17,6 +17,7 @@ const text_fe = document.querySelector(".text-fe");
 const heading_skills = document.querySelector(".heading-skills");
 const heading_contact = document.querySelector(".heading-contact");
 const text_contact = document.querySelector(".text-contact");
+const btn_submit = document.querySelector(".btn-submit");
 
 // dark mode
 btn.onclick = function () {
@@ -49,8 +50,8 @@ window.addEventListener("click", function () {
 });
 
 // validate form
-const validateName = contactName.addEventListener("input", function () {
-  const name = this.value;
+function validateName() {
+  const name = contactName.value;
 
   if (name.length == 0) {
     nameError.innerHTML = "Name is required";
@@ -62,10 +63,10 @@ const validateName = contactName.addEventListener("input", function () {
   }
   nameError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
-});
+}
 
-const validatePhone = contactPhone.addEventListener("input", function () {
-  const phone = this.value;
+function validatePhone() {
+  const phone = contactPhone.value;
 
   if (phone.length == 0) {
     phoneError.innerHTML = "Phone no is required";
@@ -81,10 +82,10 @@ const validatePhone = contactPhone.addEventListener("input", function () {
   }
   phoneError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
-});
+}
 
-const validateEmail = contactEmail.addEventListener("input", function () {
-  const email = this.value;
+function validateEmail() {
+  const email = contactEmail.value;
 
   if (email.length == 0) {
     emailError.innerHTML = "Email no is required";
@@ -101,23 +102,28 @@ const validateEmail = contactEmail.addEventListener("input", function () {
   }
   emailError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
-});
+}
 
-const validateMessage = contactMessage.addEventListener("input", function () {
-  const message = this.value;
+function validateMessage() {
+  const message = contactMessage.value;
   const required = 30;
   const left = required - message.length;
-  console.log("test");
+
   if (left > 0) {
     messageError.innerHTML = left + " more characters required";
     return false;
   }
   messageError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
-});
+}
 
 function validateForm() {
-  if (!validateName || !validatePhone || !validateEmail || !validateMessage) {
+  if (
+    !validateName() ||
+    !validatePhone() ||
+    !validateEmail() ||
+    !validateMessage()
+  ) {
     submitError.style.display = "block";
     submitError.innerHTML = "Please fix error to send message";
     setTimeout(function () {
@@ -127,7 +133,84 @@ function validateForm() {
   }
 }
 
-// Function untuk tampilin element pas di scroll
+// const validateName = contactName.addEventListener("input", function () {
+//   const name = this.value;
+
+//   if (name.length == 0) {
+//     nameError.innerHTML = "Name is required";
+//     return false;
+//   }
+//   if (!name.match(/^[a-zA-Z]+ [a-zA-Z]+$/)) {
+//     nameError.innerHTML = "Write full name";
+//     return false;
+//   }
+//   nameError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+//   return true;
+// });
+
+// const validatePhone = contactPhone.addEventListener("input", function () {
+//   const phone = this.value;
+
+//   if (phone.length == 0) {
+//     phoneError.innerHTML = "Phone no is required";
+//     return false;
+//   }
+//   if (phone.length !== 12) {
+//     phoneError.innerHTML = "Phone no should be 12 digits";
+//     return false;
+//   }
+//   if (!phone.match(/^[0-9]{12}$/)) {
+//     phoneError.innerHTML = "Only digits please";
+//     return false;
+//   }
+//   phoneError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+//   return true;
+// });
+
+// const validateEmail = contactEmail.addEventListener("input", function () {
+//   const email = this.value;
+
+//   if (email.length == 0) {
+//     emailError.innerHTML = "Email no is required";
+//     return false;
+//   }
+
+//   if (
+//     !email.match(
+//       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+//     )
+//   ) {
+//     emailError.innerHTML = "Email invalid";
+//     return false;
+//   }
+//   emailError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+//   return true;
+// });
+
+// const validateMessage = contactMessage.addEventListener("input", function () {
+//   const message = this.value;
+//   const required = 30;
+//   const left = required - message.length;
+//   if (left > 0) {
+//     messageError.innerHTML = left + " more characters required";
+//     return false;
+//   }
+//   messageError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+//   return true;
+// });
+
+// function validateForm() {
+//   if (!validateName || !validatePhone || !validateEmail || !validateMessage) {
+//     submitError.style.display = "block";
+//     submitError.innerHTML = "Please fix error to send message";
+//     setTimeout(function () {
+//       submitError.style.display = "none";
+//     }, 3000);
+//     return false;
+//   }
+// }
+
+// Function for animation on scroll
 
 window.addEventListener("scroll", muncul);
 function muncul() {
@@ -135,11 +218,32 @@ function muncul() {
   let ukuranScroll = 150;
 
   hilangg(".about", "tampil-atas");
-  hilangg(".skills", "tampil-samping");
   hilangg(".content-about", "tampil-samping");
+  hilangg(".contact", "tampil-samping");
+  hilangg(".contact", "tampil-samping");
+
+  // portofolio animation
   hilangg(".portofolio", "tampil-atas");
-  hilangg(".contact", "tampil-samping");
-  hilangg(".contact", "tampil-samping");
+  setTimeout(function () {
+    hilangg(".portof1", "tampil-samping");
+  }, 1000);
+  setTimeout(function () {
+    hilangg(".portof2", "tampil-samping");
+  }, 2000);
+  setTimeout(function () {
+    hilangg(".portof3", "tampil-samping");
+  }, 3000);
+
+  // contact animation
+  setTimeout(function () {
+    hilangg(".content-container", "tampil-atas");
+  }, 1000);
+  setTimeout(function () {
+    hilangg(".contact-container", "tampil-samping");
+  }, 2000);
+
+  // skills animation
+  hilangg(".skills", "tampil-samping");
   setTimeout(function () {
     hilangg(".logo1", "tampil-samping");
   }, 1000);
