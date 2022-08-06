@@ -178,28 +178,34 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form name="contact" id="contact-form">
-                        <h3>Send Message</h3>
-                        <div class="inputBox">
-                            <input type="text" name="nama">
-                            <div class="error-hint hidden">Your name is required</div>
-                            <span>Full Name</span>
-
+                <div class="contact-container">
+                    <form action="">
+                        <h3>CONTACT FORM</h3>
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()">
+                            <span id="name-error"></span>
                         </div>
-                        <div class="inputBox">
-                            <input type="text" name="email">
-                            <div class="error-hint hidden">Your email is invalid</div>
-                            <span>Email</span>
+                        <div class="input-group">
+                            <label>Phone No.</label>
+                            <input type="text" placeholder="123 456 7890 12" id="contact-phone"
+                                onkeyup="validatePhone()">
+                            <span id="phone-error"></span>
                         </div>
-                        <div class="inputBox">
-                            <textarea id="" cols="30" rows="10" name="message"></textarea>
-                            <div class="error-hint hidden">Your message is required</div>
-                            <span>Type your message...</span>
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="text" placeholder="Enter your email" id="contact-email"
+                                onkeyup="validateEmail()">
+                            <span id="email-error"></span>
                         </div>
-                        <div class="inputBox">
-                            <input type="submit" onclick="submitForm()">
+                        <div class="input-group">
+                            <label>Your Message</label>
+                            <textarea rows="5" placeholder="Enter your message" id="contact-message"
+                                onkeyup="validateMessage()"></textarea>
+                            <span id="message-error"></span>
                         </div>
+                        <button onclick="return validateForm()">Send Message</button>
+                        <span id="submit-error"></span>
                     </form>
                 </div>
             </div>

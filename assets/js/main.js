@@ -1,10 +1,10 @@
 const menuToggle = document.querySelector(".menu-toogle input");
 const nav = document.querySelector(".nav-items");
-const form = document.querySelector("form");
-const nameInput = document.querySelector("input[name='nama']");
-const emailInput = document.querySelector("input[name='email']");
-const messageInput = document.querySelector("textarea[name='message']");
-const inputs = [nameInput, emailInput, messageInput];
+const nameError = document.getElementById("name-error");
+const phoneError = document.getElementById("phone-error");
+const emailError = document.getElementById("email-error");
+const messageError = document.getElementById("message-error");
+const submitError = document.getElementById("submit-error");
 let icon = document.querySelector(".fa-moon");
 let btn = document.querySelector(".btn-dark");
 let h1 = document.querySelector(".heading");
@@ -45,50 +45,87 @@ for (let i = 0; i < anchor.length; i++) {
   });
 }
 
-// form contact
-const isValidEmail = (email) => {
-  const re =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-};
+// validate form
+function validateName() {
+  const name = document.getElementById("contact-name").value;
 
-const resetElm = (elm) => {
-  elm.nextElementSibling.classList.add("hidden");
-};
+  if (name.length == 0) {
+    nameError.innerHTML = "Name is required";
+    return false;
+  }
+  if (!name.match(/^[a-zA-Z]+ [a-zA-Z]+$/)) {
+    nameError.innerHTML = "Write full name";
+    return false;
+  }
+  nameError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  return true;
+}
 
-const invalidateElm = (elm) => {
-  elm.nextElementSibling.classList.remove("hidden");
-};
+function validatePhone() {
+  const phone = document.getElementById("contact-phone").value;
 
-const validateInputs = () => {
-  resetElm(nameInput);
-  resetElm(emailInput);
-  resetElm(messageInput);
-  if (!nameInput.value) {
-    invalidateElm(nameInput);
+  if (phone.length == 0) {
+    phoneError.innerHTML = "Phone no is required";
+    return false;
+  }
+  if (phone.length !== 12) {
+    phoneError.innerHTML = "Phone no should be 12 digits";
+    return false;
+  }
+  if (!phone.match(/^[0-9]{12}$/)) {
+    phoneError.innerHTML = "Only digits please";
+    return false;
+  }
+  phoneError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  return true;
+}
+
+function validateEmail() {
+  const email = document.getElementById("contact-email").value;
+
+  if (email.length == 0) {
+    emailError.innerHTML = "Email no is required";
+    return false;
   }
 
-  if (!isValidEmail(emailInput.value)) {
-    invalidateElm(emailInput);
+  if (
+    !email.match(
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )
+  ) {
+    emailError.innerHTML = "Email invalid";
+    return false;
+  }
+  emailError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  return true;
+}
+
+function validateMessage() {
+  const message = document.getElementById("contact-message").value;
+  const required = 30;
+  const left = required - message.length;
+
+  if (left > 0) {
+    messageError.innerHTML = left + " more characters required";
+    return false;
   }
 
-  if (!messageInput.value) {
-    invalidateElm(messageInput);
+  messageError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  return true;
+}
+
+function validateForm() {
+  if (
+    !validateName() ||
+    !validatePhone() ||
+    !validateEmail() ||
+    !validateMessage()
+  ) {
+    submitError.style.display = "block";
+    submitError.innerHTML = "Please fix error to send message";
+    setTimeout(function () {
+      submitError.style.display = "none";
+    }, 3000);
+    return false;
   }
-};
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  validateInputs();
-});
-
-inputs.forEach((input) => {
-  input.addEventListener("input", () => {
-    validateInputs();
-  });
-});
-
-function submitForm() {
-  document.contact.submit();
-  document.contact.reset();
 }
