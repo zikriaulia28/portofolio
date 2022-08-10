@@ -31,7 +31,6 @@
     }
 
     .container {
-        width: 100%;
         padding: 50px;
     }
 
@@ -250,7 +249,11 @@
     }
 
     .portofolio {
-        height: 70rem;
+        height: 110rem;
+    }
+
+    .portofolio-wrapper .portofolio-sub {
+        padding-left: 30px;
     }
 
     .about-wrapper .content p {

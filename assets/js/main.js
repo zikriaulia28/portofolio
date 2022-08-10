@@ -233,6 +233,9 @@ function muncul() {
   setTimeout(function () {
     hilangg(".portof3", "tampil-samping");
   }, 3000);
+  setTimeout(function () {
+    hilangg(".portof4", "tampil-samping");
+  }, 4000);
 
   // contact animation
   setTimeout(function () {
