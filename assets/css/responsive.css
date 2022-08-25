@@ -248,6 +248,10 @@
         width: 100%;
     }
 
+    .content-about .text {
+        margin-top: 15px;
+    }
+
     .logo1 img,
     .logo2 img,
     .logo3 img,
@@ -265,7 +269,7 @@
     }
 
     .portofolio-wrapper .portofolio-sub {
-        padding-left: 45px;
+        padding-left: 30px;
     }
 
     .about-wrapper .content p {
@@ -273,7 +277,7 @@
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 390px) {
 
 
     .content-about .text-caption {
@@ -286,7 +290,7 @@
     }
 
     .portofolio-wrapper .portofolio-sub {
-        padding-left: 0;
+        padding-left: 20px;
     }
 
     .contact-wrapper .box {
